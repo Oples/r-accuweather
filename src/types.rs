@@ -81,24 +81,24 @@ pub struct Temperature {
 #[derive(Deserialize, Debug)]
 #[serde(rename_all = "PascalCase")]
 pub struct DayPartForecast {
-    pub cloud_cover: i32,
-    pub hours_of_precipitation: f32,
-    pub hours_of_rain: f32,
-    pub ice: AccuweatherMeasurement,
-    pub ice_probability: i32,
+    // pub hours_of_precipitation: Option<f32>,
+    // pub hours_of_rain: Option<f32>,
+    // pub ice: AccuweatherMeasurement,
+    // pub ice_probability: i32,
     pub icon: i32,
     pub icon_phrase: String,
-    pub long_phrase: String,
-    pub precipitation_probability: i32,
-    pub rain: AccuweatherMeasurement,
-    pub rain_probability: i32,
-    pub short_phrase: String,
-    pub snow: AccuweatherMeasurement,
-    pub snow_probability: i32,
-    pub thunderstorm_probability: i32,
-    pub total_liquid: AccuweatherMeasurement,
-    pub wind: Wind,
-    pub wind_gust: Wind,
+    pub has_precipitation: bool,
+    // pub long_phrase: String,
+    // pub precipitation_probability: i32,
+    // pub rain: AccuweatherMeasurement,
+    // pub rain_probability: i32,
+    // pub short_phrase: String,
+    // pub snow: AccuweatherMeasurement,
+    // pub snow_probability: i32,
+    // pub thunderstorm_probability: i32,
+    // pub total_liquid: AccuweatherMeasurement,
+    // pub wind: Wind,
+    // pub wind_gust: Wind,
 }
 
 /// Representation of degree day summary in daily forecast api.
@@ -135,20 +135,20 @@ pub struct Moon {
 #[derive(Deserialize, Debug)]
 #[serde(rename_all = "PascalCase")]
 pub struct DailyForecast {
-    pub air_and_pollen: Vec<AirAndPollen>,
+    // pub air_and_pollen: Vec<AirAndPollen>,
     pub date: String,
     pub day: DayPartForecast,
-    pub degree_day_summary: DegreeDaySummary,
+    // pub degree_day_summary: DegreeDaySummary,
     pub epoch_date: i64,
-    pub hours_of_sun: f32,
+    // pub hours_of_sun: f32,
     pub link: String,
     pub mobile_link: String,
-    pub moon: Moon,
+    // pub moon: Moon,
     pub night: DayPartForecast,
-    pub real_feel_temperature: Temperature,
-    pub real_feel_temperature_shade: Temperature,
+    // pub real_feel_temperature: Temperature,
+    // pub real_feel_temperature_shade: Temperature,
     pub sources: Vec<String>,
-    pub sun: Sun,
+    // pub sun: Sun,
     pub temperature: Temperature,
 }
 

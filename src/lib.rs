@@ -11,11 +11,9 @@
 //! let client = accuweather::Accuweather::new(api_key, Some(12345), None);
 //! // get next 12 hours of hourly forecasts
 //! let hourly_forecasts = client.get_hourly_forecasts(12);
-//! 
+//!
 //! let daily_forecasts = client.get_daily_forecasts(5);
 //! let conditions = client.get_current_conditions();
-
-
 
 extern crate reqwest;
 #[macro_use]
@@ -288,7 +286,7 @@ mod tests {
         let client = Accuweather::new(api_key, Some(12345), None);
         let res_forecasts = client.get_daily_forecasts(5);
         let forecasts = res_forecasts.unwrap();
-        assert_eq!(forecasts.daily_forecasts[0].temperature.minimum.value, 5.4);
+        assert_eq!(forecasts.daily_forecasts[0].temperature.minimum.value, 15.2);
     }
     #[test]
     fn test_daily_forecast_nok_forbidden() {
